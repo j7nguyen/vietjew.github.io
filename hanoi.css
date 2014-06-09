@@ -1,0 +1,72 @@
+h1 {
+	text-align: center;
+}
+
+.game {
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	margin: -100px 0 0 -320px;
+}
+
+.tower {
+  float: left;
+  border: gray solid 3px;
+  height: 130px;
+  width: 200px;
+  padding: 3px;
+  
+}
+
+.highlighted {
+  background-color: magenta;
+}
+
+.disc {
+	
+
+  margin: 3px auto;
+  height: 40px;
+}
+
+.disc3 {
+  width: 196px;
+  background-color: blue;
+  outline: gray solid 3px;
+}
+
+.disc2 {
+  width: 120px;
+  background-color: yellow;
+  outline: gray solid 3px;
+}
+
+.disc1 {
+  width: 60px;
+  background-color: red;
+  outline: gray solid 3px;
+}
+
+.buttoner {
+
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  border: green solid 3px;
+  height: 60px;
+  width: 100px;
+  border:1px solid #84bbf3;
+	
+		background-color:#0f7a41;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:normal;
+	font-style:normal;
+	height:40px;
+	line-height:40px;
+	width:100px;
+	text-decoration:none;
+	text-align:center;
+	cursor: pointer;
+}

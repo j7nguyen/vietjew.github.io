@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<head>
+  <title>Hanoi</title>
+  <link href="hanoi.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>Towers of Hanoi</h1>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src='hanoi.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js'></script>
+  <div class="game">
+  </div>
+  <script>
+  
+    var game = new Hanoi.TowersUI();
+    game.installHandlers();
+  
+  </script>
+<div class='buttoner'>Start Over</div>
+</body>
+<script>
+
+$('.buttoner').on('click', function() {
+  game = new Hanoi.TowersUI();
+  game.installHandlers();
+})
+</script>

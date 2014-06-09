@@ -11,17 +11,21 @@
   <div class="game">
   </div>
   <script>
-  
+
     var game = new Hanoi.TowersUI();
     game.installHandlers();
-  
+
   </script>
-<div class='buttoner'>Start Over</div>
+<div class='buttoner' id='startover'>Start Over</div>
+<div class='buttoner' id='home'>Back to Portfolio</div>
 </body>
 <script>
 
-$('.buttoner').on('click', function() {
+$('#startover').on('click', function() {
   game = new Hanoi.TowersUI();
   game.installHandlers();
-})
+});
+$('#home').on('click', function() {
+  window.location.href = "index.html";
+});
 </script>

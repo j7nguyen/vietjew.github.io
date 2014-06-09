@@ -15,7 +15,7 @@ h1 {
   height: 130px;
   width: 200px;
   padding: 3px;
-  
+
 }
 
 .highlighted {
@@ -23,7 +23,7 @@ h1 {
 }
 
 .disc {
-	
+
 
   margin: 3px auto;
   height: 40px;
@@ -48,15 +48,12 @@ h1 {
 }
 
 .buttoner {
-
-  margin-top: 200px;
   margin-left: auto;
   margin-right: auto;
   border: green solid 3px;
   height: 60px;
-  width: 100px;
   border:1px solid #84bbf3;
-	
+
 		background-color:#0f7a41;
 	color:#ffffff;
 	font-family:Arial;
@@ -69,4 +66,14 @@ h1 {
 	text-decoration:none;
 	text-align:center;
 	cursor: pointer;
+}
+
+#startover {
+	width: 100px;
+	margin-top: 200px;
+}
+
+#home {
+	width: 150px;
+	margin-top: 20px;
 }

@@ -2,9 +2,13 @@ h1 {
 	text-align: center;
 }
 
+.intro {
+	width: 50%;
+	margin-left: 25%;
+}
 .game {
 	position: absolute;
-	top: 25%;
+	top: 37%;
 	left: 50%;
 	margin: -100px 0 0 -320px;
 }

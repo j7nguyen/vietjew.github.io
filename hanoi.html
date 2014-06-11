@@ -2,41 +2,44 @@
 <head>
   <title>Hanoi</title>
   <link href="hanoi.css" rel="stylesheet" type="text/css">
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 </head>
-<body>
-<div class='row'>
-	<div class='col col-xs-2 col-md-2'></div>
-	<div class='col col-xs-8 col-md-8'>
-<h1>Towers of Hanoi</h1>
-<div class='intro'>Click on a tower to select the pile from which you will move a disc.
-  Click on another tower to move the disc there. You cannot move a disc on top of
-  a smaller disc. The game is won when you have successfully recreated the entire pile
-  on another tower.</div>
-</div>
-<div class='col col-xs-2 col-md-2'></div>
-</div>
-<div class='row'>
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script src='hanoi.js'></script>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js'></script>
-<div class='col col-xs-2 col-md-2'></div>
-<div class='col col-xs-8 col-md-8'>
-  <div class="game">
-  </div>
-</div>
-<div class='col col-xs-2 col-md-2'></div>
-  <script>
+<body class='custom-body'>
+	<div class='container-fluid'>
+		<div class='row'>
+			<div class='col-xs-3 col-md-3'></div>
+			<div class='col-xs-6 col-md-6'>
+				<h1>Towers of Hanoi</h1>
+				<div class='intro'>Click on a tower to select the pile from which you will move a disc.
+					Click on another tower to move the disc there. You cannot move a disc on top of
+					a smaller disc. The game is won when you have successfully recreated the entire pile
+					on another tower.</div>
+				</div>
+				<div class='col-xs-3 col-md-3'></div>
+			</div>
+			<div class='row'>
+				<div class='col-xs-3 col-md-3'></div>
+				<div class='col-xs-6 col-md-6 game'>
+				</div>
+				<div class='col-xs-3 col-md-3'></div>
+			</div>
+			<div class='row'>
+				<div class='col-xs-2 col-md-2'></div>
+				<div class='col-xs-8 col-md-8'>
+					<div class='buttoner' id='startover'>Start Over</div>
+					<div class='buttoner' id='home'>Back to Portfolio</div>
+				</div>
+				<div class='col-xs-2 col-md-2'></div>
+			</div>
 
-    var game = new Hanoi.TowersUI();
-    game.installHandlers();
-
-  </script>
-<div class='buttoner' id='startover'>Start Over</div>
-<div class='buttoner' id='home'>Back to Portfolio</div>
-</div>
+		</div>
 </body>
+				<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+				<script src='hanoi.js'></script>
+				<script src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js'></script>
 <script>
+var game = new Hanoi.TowersUI();
+game.installHandlers();
 
 $('#startover').on('click', function() {
   game = new Hanoi.TowersUI();

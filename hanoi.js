@@ -47,7 +47,7 @@
   TowersUI.prototype.buildDivs = function () {
       var divString = '<div class="game">';
       for (var i = 0; i < 3; i++) {
-        divString += '<div class="tower" id="' + i + '">';
+        divString += '<div class="tower col-xs-2 col-md-2" id="' + i + '">';
         for (var j = 2; j >= 0; j--) {
           divString += '<div class="disc" id="' + i + '-' + j + '"></div>';
         }
@@ -58,7 +58,6 @@
     }
 
   TowersUI.prototype.render = function () {
-    console.log(root.$('div.game'));
     root.$(".game").replaceWith(this.buildDivs());
 
     //here's where we toggle div classes

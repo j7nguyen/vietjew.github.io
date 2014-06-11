@@ -1,25 +1,30 @@
+.custom-body {
+	background-color: #34495E;
+	color: white;
+}
+
 h1 {
 	text-align: center;
 }
-
 .intro {
-	width: 50%;
-	margin-left: 25%;
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
 }
 .game {
-	position: absolute;
-	top: 37%;
-	left: 50%;
-	margin: -100px 0 0 -320px;
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
 }
 
 .tower {
   float: left;
-  border: gray solid 3px;
+  border: gray solid 1px;
   height: 130px;
   width: 200px;
-  padding: 3px;
-
+	background-color: white;
 }
 
 .highlighted {
@@ -27,31 +32,32 @@ h1 {
 }
 
 .disc {
-
-
-  margin: 3px auto;
+  margin-left: auto;
+	margin-right: auto;
   height: 40px;
+	margin-top: 2px;
 }
 
 .disc3 {
-  width: 196px;
+  width: 100%;
   background-color: blue;
-  outline: gray solid 3px;
+		border: 1px solid gray
 }
 
 .disc2 {
-  width: 120px;
+  width: 66%;
   background-color: yellow;
-  outline: gray solid 3px;
+		border: 1px solid gray
 }
 
 .disc1 {
-  width: 60px;
+  width: 33%;
   background-color: red;
-  outline: gray solid 3px;
+		border: 1px solid gray
 }
 
 .buttoner {
+	margin-top: 5px;
   margin-left: auto;
   margin-right: auto;
   border: green solid 3px;
@@ -74,10 +80,8 @@ h1 {
 
 #startover {
 	width: 100px;
-	margin-top: 200px;
 }
 
 #home {
 	width: 150px;
-	margin-top: 20px;
 }

@@ -1,5 +1,148 @@
+<!DOCTYPE html>
 <html>
+<head>
+	<link rel="stylesheet" type="text/css" href="dropbox.css">
+	<link rel="stylesheet" type="text/css" href="grid.css">
+	<link rel="stylesheet" type="text/css" href="carousel.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'></head>
 <body>
-<h2>DropBox Take-Home Interview Page</h2>
+	<div id="wrapper" class="grid-container">
+		<div id="bizsection" class="row">
+			<div id="menu" class="col-2">
+				<ul>
+					<li><a href="#" onclick="return false;"><img src="assets/white_dropbox_glyph@2x.png" width="36" height="34" alt="White Dropbox Glyph@2x"></a></li>
+					<li><a href="#" onclick="return false;">Business home</a></li>
+					<li><a href="#" onclick="return false;">Overview</a></li>
+					<li><a href="#" onclick="return false;">Uses</a></li>
+					<li><a href="#" onclick="return false;">Resources</a></li>
+					<li><a href="#" onclick="return false;">Customers</a></li>
+					<li><a href="#" onclick="return false;">Pricing</a></li>
+					<li><a href="#" onclick="return false;">Contact</a></li>
+				</ul>
+			</div>
+			<div class="col-1">
+			</div>
+			<div id="teamsync" class="col-6">
+				<h1>Get your team in sync</h1>
+				<h3>Dropbox for Business lets your team collaborate on<br />
+					important projects anywhere, while keeping IT in control.</h3>
+					<a href="#"><div class="trybutton bizbutton round">
+						<p>Try it free</p>
+					</div></a>
+					<h3>or <a href="#">buy for $15 / user / month</a></h3>
+			</div>
+			<div class="col-3">
+			</div>
+		</div>
+		
+		<div id="whydropbox" class="row">
+			<div class="col-12">
+				<h2>Why Dropbox for Business?</h2>
+			</div>
+			<div class="col-4">
+				<img src="assets/dropbox-for-business-why-devices.png">
+				<h2>The power to do more</h2>
+				<h3>Watch productivity soar with the solution loved by over 300 million 
+					users. Let team members instantly sync and share data, so they can 
+					work together from anywhere.</h3>
+			</div>
+			<div class="col-4">
+				<img src="assets/dropbox-for-business-why-watch.png">
+				<h2>Security inspires confidence</h2>
+				<h3>Dropbox for Business makes data access safe, reliable, and fast. And
+					with powerful admin controls, IT can protect information both inside
+					and outside your organization.</h3>
+			</div>
+			<div class="col-4">
+				<img src="assets/dropbox-for-business-why-key.png">
+				<h2>A smarter investment</h2>
+				<h3>Break the cycle of training sessions, support tickets, and lost 
+					productivity. Give employees the solution they know, and free IT --
+					and your team -- to get work done.</h3>
+			</div>
+			<div class="col-5"></div>
+			<div class="col-2">
+				<div class="learnbutton round">
+					<h3>Learn more</h3>
+				</div>
+			</div>
+			<div class="col-5"></div>
+		</div>
+		<hr>
+		<div id="whatcan" class="row">
+			<div class="col-12">
+				<h2>What can Dropbox for <br />
+					Business do for your team?</h2>
+				</div>
+				<div class="col-1">
+				</div>
+				<div class="col-2">
+					<img class="arrow" id="leftarrow" src="assets/arrow-left.png">
+				</div>
+				<div class="col-6 images" style="border: 1px solid blue">
+					<ul class="carousel">
+					    <li id="1" class="hideable" style="display: block;">
+					    	<img class="carousel_image" src="assets/BCBG.jpg">
+					    </li>
+					    <li id="2" class="hideable">
+					    	<img class="carousel_image" src="assets/asana.jpg">
+					    </li>
+					    <li id="3" class="hideable">
+					    	<img class="carousel_image" src="assets/centric.jpg">
+					    </li>
+					</ul>
+				</div>
+				<div class="col-2">
+					<img class="arrow" id="rightarrow" src="assets/arrow-right.png">
+				</div>
+				<div class="col-1">
+				</div>
+				<div class="col-5"></div>
+				<div class="col-2 carousel-circles">
+						<div class="circle blue-circle"></div>
+						<div class="circle blue-circle"></div>
+						<div class="circle blue-circle"></div>
+					</div>
+					<div class="col-5"></div>
+				</div>
+				
+		</div>
+	</div>
+	
+  <div class="grid-container outline">
+      <div class="row">
+          <div class="col-1"><p>col-1</p></div> 
+          <div class="col-1"><p>col-1</p></div> 
+          <div class="col-1"><p>col-1</p></div> 
+          <div class="col-1"><p>col-1</p></div> 
+          <div class="col-1"><p>col-1</p></div> 
+          <div class="col-1"><p>col-1</p></div> 
+          <div class="col-1"><p>col-1</p></div> 
+          <div class="col-1"><p>col-1</p></div> 
+          <div class="col-1"><p>col-1</p></div> 
+          <div class="col-1"><p>col-1</p></div> 
+          <div class="col-1"><p>col-1</p></div> 
+          <div class="col-1"><p>col-1</p></div>
+      </div> 
+      <div class="row">
+          <div class="col-2"><p>col-2</p></div> 
+          <div class="col-2"><p>col-2</p></div> 
+          <div class="col-2"><p>col-2</p></div> 
+      </div> 
+      <div class="row">
+          <div class="col-3"><p>col-3</p></div> 
+          <div class="col-3"><p>col-3</p></div> 
+      </div> 
+  </div>
+	<script type="text/javascript" src="carousel.js">
+	</script>
+	<script>
+		document.getElementById("rightarrow").addEventListener("click", function() {
+			toggleSlide(true);
+		});
+		document.getElementById("leftarrow").addEventListener("click", function() {
+			toggleSlide(false);
+		});
+	</script>
 </body>
 </html>

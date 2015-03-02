@@ -1,0 +1,45 @@
+.carousel {
+	list-style-type: none;
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.hideable {
+    display: none;
+}
+
+.circle {
+	border-radius: 50%;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 15px;
+	height: 15px; 
+	display: inline-block;
+	/* width and height can be anything, as long as they're equal */
+}
+
+.blue-circle {
+	background-color: #007EE5;
+}
+
+#carousel-circles {
+}
+
+.arrow {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 135px;
+}
+
+.carousel_image {
+	width: 540px;
+	height: 300px;
+}
+
+.images {
+	padding: 0;
+}
+
+.images img {
+	margin-left: -55px;
+}

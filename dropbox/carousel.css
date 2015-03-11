@@ -22,6 +22,10 @@
 	background-color: #007EE5;
 }
 
+.gray-circle {
+	background-color: #8899A7;
+}
+
 #carousel-circles {
 }
 
@@ -29,6 +33,7 @@
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 135px;
+	cursor: pointer;
 }
 
 .carousel_image {

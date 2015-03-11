@@ -25,7 +25,7 @@ h2 {
 	font-weight: 400;
 }
 
-#whydropbox h3 {
+h3 {
 	font-size: 15px;
 	font-weight: 400;
 }
@@ -126,3 +126,28 @@ p {
 .learnbutton h3 {
 	margin: 5px;
 }
+
+#video-still {
+	background-image: url("assets/video-still.jpg");
+	background-position: 50% 50%;
+	height: 500px;
+	text-align: center;
+	color: #8899A7;
+/*	padding: 0;*/
+}
+
+#video-still h2 {
+	height: 152px;
+}
+
+#play-button {
+	cursor: pointer;
+}
+
+#video-player {
+	background-color: black;
+	height: 500px;
+	padding: 0;
+	display: none;
+}
+

@@ -28,3 +28,26 @@ function next(num, arrayLength) {
     if(num == arrayLength-1) return 0;
     else return num+1;
 }
+
+function toggleCircle(direction) {
+	var circles = document.getElementsByClassName("circle");
+	var activeCircleID = getActiveCircle(circles);
+	if (!direction) {
+		var makeActive = prev(activeCircleID, circles.length);
+	} else {
+		var makeActive = next(activeCircleID, circles.length);
+	}
+	circles[activeCircleID].className = "circle blue-circle"
+	circles[makeActive].className = "circle gray-circle"
+}
+
+function getActiveCircle(circles) {
+	var activeID = -1;
+	for (var i = 0; i < circles.length; i++) {
+		if (circles[i].className == "circle gray-circle") {
+			activeID = i;
+		}
+	}
+	return activeID;
+}
+

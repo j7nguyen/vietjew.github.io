@@ -1,0 +1,36 @@
+#header {
+	-webkit-animation-name: fadeIn;
+	-webkit-animation-duration: 2s;
+	animation-name: fadeIn;
+	animation-duration: 2s;
+}
+
+@-webkit-keyframes fadeIn {
+	0% {;
+		background-image: none;
+		background-position: 50% 0;
+	}
+	50% {
+		background-image: url("assets/dropbox-for-business-files.png");
+
+	}
+	100% {
+		background-position: 50% 50%;
+		background-image: url("assets/dropbox-for-business-files.png");
+	}
+}
+
+@keyframes fadeIn {
+	0% {;
+		background-image: none;
+		background-position: 50% 0;
+	}
+	50% {
+		background-image: url("assets/dropbox-for-business-files.png");
+		background-position: 50% 0;
+	}
+	100% {
+		background-position: 50% 50%;
+		background-image: url("assets/dropbox-for-business-files.png");
+	}
+}

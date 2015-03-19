@@ -1,7 +1,8 @@
 .carousel {
 	list-style-type: none;
-	margin-left: 0;
+	margin-left: auto;
 	margin-right: auto;
+	padding: 0;
 }
 
 .hideable {
@@ -26,7 +27,8 @@
 	background-color: #8899A7;
 }
 
-#carousel-circles {
+.carousel-circles {
+	padding-top: 0;
 }
 
 .arrow {
@@ -37,14 +39,10 @@
 }
 
 .carousel_image {
-	width: 540px;
-	height: 300px;
+	width: 100%;
+	max-width: 540px;
 }
 
 .images {
-	padding: 0;
+	padding-bottom: 0;
 }
-
-/*.images img {
-	margin-left: -55px;
-}*/

@@ -4,21 +4,22 @@
 	<link rel="stylesheet" type="text/css" href="dropbox.css">
 	<link rel="stylesheet" type="text/css" href="grid.css">
 	<link rel="stylesheet" type="text/css" href="carousel.css">
+	<link rel="stylesheet" type="text/css" href="animations.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'></head>
 <body>
 	<div id="wrapper" class="grid-container">
-		<div id="bizsection" class="row">
+		<div id="header" class="row">
 			<div id="menu" class="col-2">
-				<ul>
-					<li><a href="#" onclick="return false;"><img src="assets/white_dropbox_glyph@2x.png" width="36" height="34" alt="White Dropbox Glyph@2x"></a></li>
-					<li><a href="#" onclick="return false;">Business home</a></li>
-					<li><a href="#" onclick="return false;">Overview</a></li>
-					<li><a href="#" onclick="return false;">Uses</a></li>
-					<li><a href="#" onclick="return false;">Resources</a></li>
-					<li><a href="#" onclick="return false;">Customers</a></li>
-					<li><a href="#" onclick="return false;">Pricing</a></li>
-					<li><a href="#" onclick="return false;">Contact</a></li>
-				</ul>
+					<a href="#"><img src="assets/white_dropbox_glyph@2x.png" width="36" height="34" alt="White Dropbox Glyph@2x"></a>
+
+					<h3><a href="#">Business home</a></h3>
+					<h3><a href="#">Overview</a></h3>
+					<h3><a href="#">Uses</a><br />
+					<a href="#">Resources</a><br />
+					<a href="#">Customers</a><br />
+					<a href="#">Pricing</a><br />
+					<a href="#">Contact</a></h3>
+
 			</div>
 			<div class="col-1">
 			</div>
@@ -33,7 +34,8 @@
 			</div>
 			<div class="col-3">
 			</div>
-		</div>
+	</div>
+
 		
 		<div id="whydropbox" class="row">
 			<div class="col-12">
@@ -70,18 +72,17 @@
 		</div>
 		<hr>
 		<div id="whatcan" class="row">
-			<div class="row">
+
 				<div class="col-12">
 				<h2>What can Dropbox for <br />
 					Business do for your team?</h2>
 				</div>
-			</div>
-			<div class="row">
+
 				<div class="col-1"></div>
-				<div class="col-2">
+				<div class="col-1">
 					<img class="arrow" id="leftarrow" src="assets/arrow-left.png">
 				</div>
-				<div class="col-6 images" style="border: 1px solid blue">
+				<div class="col-8 images">
 					<ul class="carousel">
 					    <li id="1" class="hideable" style="display: block;">
 					    	<img class="carousel_image" src="assets/BCBG.jpg">
@@ -94,31 +95,32 @@
 					    </li>
 					</ul>
 				</div>
-				<div class="col-2">
+				<div class="col-1">
 					<img class="arrow" id="rightarrow" src="assets/arrow-right.png">
 				</div>
 				<div class="col-1"></div>
-			</div>
+
 				
-			<div class="row">
-				<div class="col-5"></div>
-				<div class="col-2 carousel-circles">
+
+
+				<div class="col-12 carousel-circles">
 						<div class="circle gray-circle"></div>
 						<div class="circle blue-circle"></div>
 						<div class="circle blue-circle"></div>
 				</div>
-				<div class="col-5"></div>
-			</div>
+
+
 			
-			<div class="row">
-				<div class="col-4"> </div>
-				<div class="col-4">
-					<h3>From empowering mobile teams to making sure you never
-						lose a file, Dropbox for Business is designed to help
-						your team work smarter.</h3>
+
+
+				<div class="col-12">
+					<h3>From empowering mobile teams to making<br />
+						sure you never lose a file, Dropbox for<br />
+						Business is designed to help your team<br />
+						work smarter.</h3>
 				</div>
-				<div class="col-4"></div>
-			</div>
+
+
 			
 			<div class="row">
 				<div class="col-5"></div>
@@ -138,22 +140,64 @@
 					<img src="assets/player_large.png" id="play-button">
 			</div>
 		</div>
+		
+		<div class="row" id="in-sync">
+			<div class="col-12">
+				<h2>Get your team in sync</h2>
+
+				<div class="trybutton bluebutton round">
+					<p>Try it now</p>
+				</div>
+				<h3>or buy for $15 / user / month</h3>
+			</div>
+		</div>
+		<hr>
+		<div class="row footer">
+			<div class="col-2">
+				<p><b>Business</b></p>
+				<p>Home</p>
+				<p>Desktop client</p>
+				<p>Mobile</p>
+				<p>Pricing</p>
+			</div>
+			<div class="col-2">
+				<p><b>Resources</b></p>
+				<p>Blog</p>
+				<p>Help</p>
+				<p>Partners</p>
+				<p>Documentation</p>
+				<p>Purchasing FAQ</p>
+				<p>Buy</p>
+			</div>
+			<div class="col-2">
+				<p><b>Support</b></p>
+				<p>Help center</p>
+				<p>Get started</p>
+				<p>Contact us</p>
+			</div>
+			<div class="col-2">
+				<p><b>Community</b></p>
+				<p>Developers</p>
+				<p>Referrals</p>
+				<p>Integrations</p>
+			</div>
+			<div class="col-2">
+				<p><b>Connect</b></p>
+				<p>Twitter</p>
+				<p>Facebook</p>
+				<p>Google+</p>
+				<p>YouTube</p>
+				<p>Blogs</p>
+			</div>
+			<div class="col-2" id="language-selector">
+				<p>English</p>
+			</div>
+		</div>
 	</div>
 
 	
  
 	<script type="text/javascript" src="carousel.js"></script>
 	<script type="text/javascript" src="video.js"></script>
-	<script>
-		document.getElementById("rightarrow").addEventListener("click", function() {
-			toggleSlide(true);
-			toggleCircle(true);
-		});
-		document.getElementById("leftarrow").addEventListener("click", function() {
-			toggleSlide(false);
-			toggleCircle(false);
-		});
-
-	</script>
 </body>
 </html>

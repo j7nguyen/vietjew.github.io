@@ -1,3 +1,12 @@
+document.getElementById("rightarrow").addEventListener("click", function() {
+	toggleSlide(true);
+	toggleCircle(true);
+});
+document.getElementById("leftarrow").addEventListener("click", function() {
+	toggleSlide(false);
+	toggleCircle(false);
+});
+
 // direction = boolean value: true or false. If true, go to NEXT slide; otherwise go to PREV slide
 function toggleSlide(direction) {
     var elements = document.getElementsByClassName("hideable"); // gets all the "slides" in our slideshow

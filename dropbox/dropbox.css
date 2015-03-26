@@ -20,6 +20,32 @@
 	height: 500px;
 	background-image: url("assets/dropbox-for-business-files.png");
 	background-position: 50% 50%;
+	-webkit-animation-name: backgroundSlide;
+	-webkit-animation-duration: 1s;
+	animation-name: backgroundSlide;
+	animation-duration: 1s;
+}
+
+.image-slide {
+	width: 100%;
+	max-width: 200px;
+	-webkit-animation-duration: .85s;
+	animation-duration: .85s;
+}
+
+.no-delay {
+	-webkit-animation-name: imageSlideNoDelay;
+	animation-name: imageSlideNoDelay;
+}
+
+.delay-1 {
+	-webkit-animation-name: imageSlideDelayOne;
+	animation-name: imageSlideDelayOne;
+}
+
+.delay-2 {
+	-webkit-animation-name: imageSlideDelayTwo;
+	animation-name: imageSlideDelayTwo;
 }
 
 /*#bg {

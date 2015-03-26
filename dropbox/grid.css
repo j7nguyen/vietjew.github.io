@@ -9,7 +9,7 @@ div {
 .row {
 	padding: 15px;
 }
-/*-- our clearfix hack -- */ 
+
 .row:before, 
 .row:after {
     content:"";
@@ -21,9 +21,7 @@ div {
     float: left; 
     min-height: 1px; 
     width: 8.33%; 
-    /*-- our gutter -- */
     padding: 15px; 
-/*    background-color: #FFDCDC;*/
 }
 
 .col-1{ width: 8.33%; }
@@ -39,6 +37,3 @@ div {
 .col-11{ width: 91.66%; }
 .col-12{ width: 100%;   }
 
-.outline, .outline *{
-    outline: 1px solid #F6A1A1; 
-}

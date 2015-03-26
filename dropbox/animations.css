@@ -1,11 +1,20 @@
-#header {
-	-webkit-animation-name: fadeIn;
-	-webkit-animation-duration: 2s;
-	animation-name: fadeIn;
-	animation-duration: 2s;
+/*Animation for background in header*/
+@keyframes backgroundSlide {
+	0% {;
+		background-image: none;
+		background-position: 50% 0;
+	}
+	50% {
+		background-image: url("assets/dropbox-for-business-files.png");
+		background-position: 50% 0;
+	}
+	100% {
+		background-position: 50% 50%;
+		background-image: url("assets/dropbox-for-business-files.png");
+	}
 }
 
-@-webkit-keyframes fadeIn {
+@-webkit-keyframes backgroundSlide {
 	0% {;
 		background-image: none;
 		background-position: 50% 0;
@@ -20,17 +29,106 @@
 	}
 }
 
-@keyframes fadeIn {
-	0% {;
-		background-image: none;
-		background-position: 50% 0;
+
+@keyframes imageSlideNoDelay {
+	0% {
+		transform: translate(-100px, 0);
 	}
-	50% {
-		background-image: url("assets/dropbox-for-business-files.png");
-		background-position: 50% 0;
+	40% {
+		transform: translate(20px,0);
+	}
+	70% {
+		transform: translate(0,0);
 	}
 	100% {
-		background-position: 50% 50%;
-		background-image: url("assets/dropbox-for-business-files.png");
+		transform: translate(0,0);
+	}
+}
+
+@-webkit-keyframes imageSlideNoDelay {
+	0% {
+		transform: translate(-100px, 0);
+	}
+	40% {
+		transform: translate(20px,0);
+	}
+	70% {
+		transform: translate(0,0);
+	}
+	100% {
+		transform: translate(0,0);
+	}
+}
+
+
+keyframes imageSlideDelayOne {
+	0% {
+		transform: translate(-100px, 0);
+	}
+	10% {
+		transform: translate(-100px, 0);
+	}
+	50% {
+		transform: translate(20px,0);
+	}
+	80% {
+		transform: translate(0,0);
+	}
+	100% {
+		transform: translate(0,0);
+	}
+}
+
+@-webkit-keyframes imageSlideDelayOne {
+	0% {
+		transform: translate(-100px, 0);
+	}
+	10% {
+		transform: translate(-100px, 0);
+	}
+	50% {
+		transform: translate(20px,0);
+	}
+	80% {
+		transform: translate(0,0);
+	}
+	100% {
+		transform: translate(0,0);
+	}
+}
+
+keyframes imageSlideDelayTwo {
+	0% {
+		transform: translate(-100px, 0);
+	}
+	20% {
+		transform: translate(-100px, 0);
+	}
+	60% {
+		transform: translate(20px,0);
+	}
+	90% {
+		transform: translate(0,0);
+	}
+	100% {
+		transform: translate(0,0);
+	}
+}
+
+@-webkit-keyframes imageSlideDelayTwo {
+	0% {
+		transform: translate(-100px, 0);
+	}
+	20% {
+		transform: translate(-100px, 0);
+	}
+	60% {
+		transform: translate(20px,0);
+	}
+	90% {
+		transform: translate(0,0);
+	}
+	100% {
+		transform: translate(0,0);
 	}
 }

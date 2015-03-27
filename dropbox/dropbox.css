@@ -26,9 +26,16 @@
 	animation-duration: 1s;
 }
 
-.image-slide {
+.why-image {
 	width: 100%;
 	max-width: 200px;
+}
+
+.hidden {
+	display: none;
+}
+
+.image-slide {
 	-webkit-animation-duration: .85s;
 	animation-duration: .85s;
 }

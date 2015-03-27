@@ -43,6 +43,11 @@
 	max-width: 540px;
 }
 
+.carousel-slide-left {
+	-webkit-animation-name: carouselSlideLeft;
+	-webkit-animation-duration: 1s;
+}
+
 .images {
 	padding-bottom: 0;
 }

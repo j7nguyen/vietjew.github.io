@@ -12,23 +12,30 @@ function toggleSlide(direction) {
     var elements = $(".hideable"); // gets all the "slides" in our slideshow
     // Find the LI that's currently displayed
     var visibleID = getVisible(elements);
-    elements[visibleID].style.display = "none"; // hide the currently visible LI
+		var current = elements[visibleID];
+		$(current).css("display","none")
+    // elements[visibleID].style.display = "none"; // hide the currently visible LI
     if(!direction) {
         var makeVisible = prev(visibleID, elements.length); // get the previous slide
     } else {
-        var makeVisible = next(visibleID, elements.length); // get the next slide
+        var makeVisible = next(visibleID, elements.length);
+				
     }
-    elements[makeVisible].style.display = "block"; // show the previous or next slide
+    var nextSlide = elements[makeVisible];
+		$(nextSlide).css("display","block");
+		$(nextSlide).toggleClass("carousel-slide-left");
 }
+
 function getVisible(elements) {
     var visibleID = -1;
     for(var i = 0; i < elements.length; i++) {
-        if(elements[i].style.display == "block") {
+        if($(elements[i]).css("display") == "block") {
             visibleID = i;
         }
     }
     return visibleID;
 }
+
 function prev(num, arrayLength) {
     if(num == 0) return arrayLength-1;
     else return num-1;

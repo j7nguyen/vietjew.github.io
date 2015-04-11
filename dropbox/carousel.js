@@ -7,13 +7,12 @@ $('#leftarrow').click(function() {
 	toggleCircle(false);
 });
 
-// direction = boolean value: true or false. If true, go to NEXT slide; otherwise go to PREV slide
+// direction = boolean value: true or false. If true, go to the next slide; otherwise go to previous one
 function toggleSlide(direction) {
     var elements = $(".hideable"); // gets all the "slides" in our slideshow
     // Find the LI that's currently displayed
     var visibleID = getVisible(elements);
 		var current = elements[visibleID];
-		$(current).css("display","none")
     // elements[visibleID].style.display = "none"; // hide the currently visible LI
     if(!direction) {
         var makeVisible = prev(visibleID, elements.length); // get the previous slide
@@ -22,8 +21,21 @@ function toggleSlide(direction) {
 				
     }
     var nextSlide = elements[makeVisible];
+		if (direction) $(nextSlide).toggleClass("carousel-slide-left");
+		else $(nextSlide).toggleClass("carousel-slide-right");
+		
+		if ($(current).hasClass('carousel-slide-left')) {
+			$(current).toggleClass('carousel-slide-left');
+		} else if ($(current).hasClass('carousel-slide-right')) {
+			$(current).toggleClass('carousel-slide-right');
+		}
 		$(nextSlide).css("display","block");
-		$(nextSlide).toggleClass("carousel-slide-left");
+		$(current).css("display","none")
+		
+		var bgSrc = $(current).children()[0].src
+		console.log(bgSrc);
+		$('.carousel').css('background-image', 'url(' + bgSrc + ')');
+		
 }
 
 function getVisible(elements) {

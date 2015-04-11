@@ -133,12 +133,18 @@ keyframes imageSlideDelayTwo {
 
 @-webkit-keyframes carouselSlideLeft {
 	0% {
-		transform: translate(100%, 0);
+		transform: translate(15%, 0);
 	}
 	100% {
 		transform: translate(0,0);
 	}
 }
 
-@-webkit-keyframs carouselSlideRight {
+@-webkit-keyframes carouselSlideRight {
+	0% {
+		transform: translate(-15%, 0);
+	}
+	100% {
+		transform: translate(0,0);
+	}
 }

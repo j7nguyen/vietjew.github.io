@@ -1,12 +1,15 @@
 .carousel {
+/*	display: inline-block;*/
 	list-style-type: none;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 0;
+	background-size: 100%;
+	background-repeat: no-repeat;
 }
 
 .hideable {
-    display: none;
+  display: none;
 }
 
 .circle {
@@ -31,21 +34,32 @@
 	padding-top: 0;
 }
 
-.arrow {
+.arrow-div {
+/*	display: inline-block;*/
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 135px;
+	margin-top: 16%;
+}
+
+.arrow {
 	cursor: pointer;
 }
 
 .carousel_image {
 	width: 100%;
-	max-width: 540px;
+	
+/*	max-width: 540px;*/
+
 }
 
 .carousel-slide-left {
 	-webkit-animation-name: carouselSlideLeft;
-	-webkit-animation-duration: 1s;
+	-webkit-animation-duration: .5s;
+}
+
+.carousel-slide-right {
+	-webkit-animation-name: carouselSlideRight;
+	-webkit-animation-duration: .5s;
 }
 
 .images {

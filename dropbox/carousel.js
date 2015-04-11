@@ -33,9 +33,35 @@ function toggleSlide(direction) {
 		$(current).css("display","none")
 		
 		var bgSrc = $(current).children()[0].src
-		console.log(bgSrc);
 		$('.carousel').css('background-image', 'url(' + bgSrc + ')');
 		
+}
+
+$('.circle').click(function(e) {
+	var circleID = $(this)[0].id;
+	var id = parseInt(circleID.replace("circle-", ""));
+	circleSelect(id);
+	toggleCircleByID(id);
+});
+
+function circleSelect(id) {
+	var elements = $(".hideable");
+	var visibleID = getVisible(elements);
+	var current = elements[visibleID];
+	var currentID = current.id;
+	var nextSlide = elements[id];
+	
+	if (id < currentID) {
+		$(nextSlide).toggleClass("carousel-slide-right");
+	}  else {
+		$(nextSlide).toggleClass("carousel-slide-left");
+	}
+	
+	$(nextSlide).css("display","block");
+	$(current).css("display","none");
+	
+	var bgSrc = $(current).children()[0].src;
+	$('.carousel').css('background-image', 'url(' + bgSrc + ')');
 }
 
 function getVisible(elements) {
@@ -67,6 +93,12 @@ function toggleCircle(direction) {
 	}
 	circles[activeCircleID].className = "circle blue-circle"
 	circles[makeActive].className = "circle gray-circle"
+}
+function toggleCircleByID(id) {
+	var circles = $(".circle");
+	var activeCircleID = getActiveCircle(circles);
+	circles[activeCircleID].className = "circle blue-circle";
+	circles[id].className = "circle gray-circle"
 }
 
 function getActiveCircle(circles) {

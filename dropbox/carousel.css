@@ -19,6 +19,7 @@
 	width: 15px;
 	height: 15px; 
 	display: inline-block;
+	cursor: pointer;
 	/* width and height can be anything, as long as they're equal */
 }
 
@@ -54,12 +55,12 @@
 
 .carousel-slide-left {
 	-webkit-animation-name: carouselSlideLeft;
-	-webkit-animation-duration: .5s;
+	-webkit-animation-duration: .25s;
 }
 
 .carousel-slide-right {
 	-webkit-animation-name: carouselSlideRight;
-	-webkit-animation-duration: .5s;
+	-webkit-animation-duration: .25s;
 }
 
 .images {

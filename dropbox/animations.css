@@ -148,3 +148,23 @@ keyframes imageSlideDelayTwo {
 		transform: translate(0,0);
 	}
 }
+
+.image-slide {
+	-webkit-animation-duration: .85s;
+	animation-duration: .85s;
+}
+
+.no-delay {
+	-webkit-animation-name: imageSlideNoDelay;
+	animation-name: imageSlideNoDelay;
+}
+
+.delay-1 {
+	-webkit-animation-name: imageSlideDelayOne;
+	animation-name: imageSlideDelayOne;
+}
+
+.delay-2 {
+	-webkit-animation-name: imageSlideDelayTwo;
+	animation-name: imageSlideDelayTwo;
+}

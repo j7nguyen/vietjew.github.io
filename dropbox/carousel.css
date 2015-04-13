@@ -56,11 +56,15 @@
 .carousel-slide-left {
 	-webkit-animation-name: carouselSlideLeft;
 	-webkit-animation-duration: .25s;
+	animation-name: carouselSlideLeft;
+	animation-duration: .25s;
 }
 
 .carousel-slide-right {
 	-webkit-animation-name: carouselSlideRight;
 	-webkit-animation-duration: .25s;
+	animation-name: carouselSlideRight;
+	animation-duration: .25s;
 }
 
 .images {

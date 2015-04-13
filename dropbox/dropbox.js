@@ -11,6 +11,9 @@ $(window).scroll(function() {
 	inView = isVisible(".image-slide");
 	if ((inView && hidden) && $(window).scrollTop() >= 200) {
 		$(".image-slide").toggleClass("hidden");
+		$("#no-delay").toggleClass("no-delay");
+		$("#delay-1").toggleClass("delay-1");
+		$("#delay-2").toggleClass("delay-2");
 	}
 });
 

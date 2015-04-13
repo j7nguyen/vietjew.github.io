@@ -1,67 +1,68 @@
-$('#rightarrow').click(function() {
-	toggleSlide(true);
-	toggleCircle(true);
+$('.arrow').click(function(e) {
+	var elements = $(".hideable");
+	var currentID = getVisible(elements);
+	var nextID
+	if (this.id === "rightarrow") {
+		nextID = next(currentID, elements.length);
+		toggleSlide(nextID, "left");
+	} else {
+		nextID = prev(currentID, elements.length);
+		toggleSlide(nextID, "right");
+	}
+	toggleCircle(nextID);
 });
-$('#leftarrow').click(function() {
-	toggleSlide(false);
-	toggleCircle(false);
-});
-
-// direction = boolean value: true or false. If true, go to the next slide; otherwise go to previous one
-function toggleSlide(direction) {
-    var elements = $(".hideable"); // gets all the "slides" in our slideshow
-    // Find the LI that's currently displayed
-    var visibleID = getVisible(elements);
-		var current = elements[visibleID];
-    // elements[visibleID].style.display = "none"; // hide the currently visible LI
-    if(!direction) {
-        var makeVisible = prev(visibleID, elements.length); // get the previous slide
-    } else {
-        var makeVisible = next(visibleID, elements.length);
-				
-    }
-    var nextSlide = elements[makeVisible];
-		if (direction) $(nextSlide).toggleClass("carousel-slide-left");
-		else $(nextSlide).toggleClass("carousel-slide-right");
-		
-		if ($(current).hasClass('carousel-slide-left')) {
-			$(current).toggleClass('carousel-slide-left');
-		} else if ($(current).hasClass('carousel-slide-right')) {
-			$(current).toggleClass('carousel-slide-right');
-		}
-		$(nextSlide).css("display","block");
-		$(current).css("display","none")
-		
-		var bgSrc = $(current).children()[0].src
-		$('.carousel').css('background-image', 'url(' + bgSrc + ')');
-		
-}
 
 $('.circle').click(function(e) {
 	var circleID = $(this)[0].id;
-	var id = parseInt(circleID.replace("circle-", ""));
-	circleSelect(id);
-	toggleCircleByID(id);
+	var elements = $(".hideable");
+	var currentID = getVisible(elements);
+	if (circleID === currentID) return;
+	var nextID = parseInt(circleID.replace("circle-", ""));
+	toggleSlide(nextID);
+	toggleCircle(nextID);
 });
 
-function circleSelect(id) {
+function toggleSlide(id, direction) {
 	var elements = $(".hideable");
 	var visibleID = getVisible(elements);
 	var current = elements[visibleID];
-	var currentID = current.id;
 	var nextSlide = elements[id];
+
+	cleanClass(current);
 	
-	if (id < currentID) {
-		$(nextSlide).toggleClass("carousel-slide-right");
-	}  else {
-		$(nextSlide).toggleClass("carousel-slide-left");
+	if (direction === "right") {
+		slideRight(current, nextSlide);
+	} else if (direction === "left") {
+		slideLeft(current, nextSlide);
+	} else if (id < visibleID) {
+		slideRight(current, nextSlide);
+	}  else if (id === visibleID) {
+		return;
+	} else {
+		slideLeft(current, nextSlide);
 	}
 	
 	$(nextSlide).css("display","block");
-	$(current).css("display","none");
-	
 	var bgSrc = $(current).children()[0].src;
 	$('.carousel').css('background-image', 'url(' + bgSrc + ')');
+}
+
+function slideLeft(current, nextSlide) {
+	$(current).css("display","none");	
+	$(nextSlide).toggleClass("carousel-slide-left");
+}
+
+function slideRight(current, nextSlide) {
+	$(current).css("display","none");	
+	$(nextSlide).toggleClass("carousel-slide-right");
+}
+
+function cleanClass(current) {
+	if ($(current).hasClass('carousel-slide-left')) {
+		$(current).toggleClass('carousel-slide-left');
+	} else if ($(current).hasClass('carousel-slide-right')) {
+		$(current).toggleClass('carousel-slide-right');
+	}
 }
 
 function getVisible(elements) {
@@ -83,18 +84,7 @@ function next(num, arrayLength) {
     else return num+1;
 }
 
-function toggleCircle(direction) {
-	var circles = $(".circle");
-	var activeCircleID = getActiveCircle(circles);
-	if (!direction) {
-		var makeActive = prev(activeCircleID, circles.length);
-	} else {
-		var makeActive = next(activeCircleID, circles.length);
-	}
-	circles[activeCircleID].className = "circle blue-circle"
-	circles[makeActive].className = "circle gray-circle"
-}
-function toggleCircleByID(id) {
+function toggleCircle(id) {
 	var circles = $(".circle");
 	var activeCircleID = getActiveCircle(circles);
 	circles[activeCircleID].className = "circle blue-circle";
@@ -110,4 +100,3 @@ function getActiveCircle(circles) {
 	}
 	return activeID;
 }
-

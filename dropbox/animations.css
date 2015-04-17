@@ -133,7 +133,7 @@ keyframes imageSlideDelayTwo {
 
 @-webkit-keyframes carouselSlideLeft {
 	0% {
-		transform: translate(10%, 0);
+		transform: translate(80%, 0);
 	}
 	100% {
 		transform: translate(0,0);
@@ -142,7 +142,7 @@ keyframes imageSlideDelayTwo {
 
 @-webkit-keyframes carouselSlideRight {
 	0% {
-		transform: translate(-10%, 0);
+		transform: translate(-80%, 0);
 	}
 	100% {
 		transform: translate(0,0);
@@ -150,8 +150,8 @@ keyframes imageSlideDelayTwo {
 }
 
 .image-slide {
-	-webkit-animation-duration: .85s;
-	animation-duration: .85s;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
 }
 
 .no-delay {

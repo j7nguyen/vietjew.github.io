@@ -1,11 +1,12 @@
 .carousel {
-/*	display: inline-block;*/
 	list-style-type: none;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 0;
 	background-size: 100%;
 	background-repeat: no-repeat;
+	overflow: hidden;
+	max-width: 540px;
 }
 
 .hideable {
@@ -37,10 +38,10 @@
 
 .arrow-div {
 /*	display: inline-block;*/
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 16%;
+	margin-top: 12%;
+	padding: 0;
 }
+
 
 .arrow {
 	cursor: pointer;
@@ -68,5 +69,5 @@
 }
 
 .images {
-	padding-bottom: 0;
+	padding: 0;
 }

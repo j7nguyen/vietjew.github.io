@@ -14,8 +14,11 @@ div {
 .row:before, 
 .row:after {
     content:"";
-      display: table ;
-    clear:both;
+      display: table;
+}
+
+.row:after {
+	clear: both;
 }
 
 [class*='col-'] {
@@ -38,3 +41,21 @@ div {
 .col-11{ width: 91.66%; }
 .col-12{ width: 100%;   }
 
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+	[class*='col-'] {  margin: 1% 0 1% 0%; }
+  .col-1, 
+	.col-2, 
+	.col-3, 
+	.col-4, 
+	.col-5, 
+	.col-6, 
+	.col-7, 
+	.col-8, 
+	.col-9, 
+	.col-1, 
+	.col-1, 
+	.col-1 {
+	width: 100%; 
+	}
+}

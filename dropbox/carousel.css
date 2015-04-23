@@ -7,6 +7,7 @@
 	background-repeat: no-repeat;
 	overflow: hidden;
 	max-width: 540px;
+	display: inline-block;
 }
 
 .hideable {
@@ -36,15 +37,25 @@
 	padding-top: 0;
 }
 
-.arrow-div {
-/*	display: inline-block;*/
-	margin-top: 12%;
-	padding: 0;
+#carousel-images {
+	text-align: center;
+	position: relative;
 }
 
-
 .arrow {
+	top: 50%;
+	position: absolute;
+	transform: translateY(-15px);
 	cursor: pointer;
+}
+
+.left-arrow-div {
+	text-align: right;
+}
+
+.right-arrow-div {
+	text-align: left;
+	padding-left: 0;
 }
 
 .carousel_image {
@@ -53,6 +64,8 @@
 /*	max-width: 540px;*/
 
 }
+
+
 
 .carousel-slide-left {
 	-webkit-animation-name: carouselSlideLeft;

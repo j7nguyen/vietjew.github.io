@@ -8,6 +8,7 @@
 	overflow: hidden;
 	max-width: 540px;
 	display: inline-block;
+	position: relative;
 }
 
 .hideable {
@@ -49,23 +50,17 @@
 	cursor: pointer;
 }
 
-.left-arrow-div {
-	text-align: right;
+#leftarrow {
+	left: 15%;
 }
 
-.right-arrow-div {
-	text-align: left;
-	padding-left: 0;
+#rightarrow {
+	right: 15%;
 }
 
 .carousel_image {
 	width: 100%;
-	
-/*	max-width: 540px;*/
-
 }
-
-
 
 .carousel-slide-left {
 	-webkit-animation-name: carouselSlideLeft;

@@ -1,11 +1,11 @@
 (function() {
+	highScore = 0;
 	var Game = window.Game = function(canvas) {
 		this.width = canvas.width;
 		this.height = canvas.height;
 		this.ctx = canvas.getContext("2d");
 		this.canvas = canvas;
 		this.ctx.font = "40px Arial";
-
 	}
 
 	Game.prototype = {
@@ -44,8 +44,10 @@
 					this.ctx.strokeStyle="black";
 					this.ctx.lineWidth = 2;
 					this.ctx.fillStyle = "yellow";
-					this.ctx.fillText("Score: " + this.level.score, 415, 40);
-					this.ctx.strokeText("Score: " + this.level.score, 415, 40);
+					this.ctx.fillText("Top score: " + highScore, 390, 40);
+					this.ctx.strokeText("Top score: " + highScore, 390, 40);
+					this.ctx.fillText("Score: " + this.level.score, 390, 80);
+					this.ctx.strokeText("Score: " + this.level.score, 390, 80);
 				},
 				tick: function() {
 					this.level.tick();
@@ -57,6 +59,7 @@
 					if (this.level.collidesWith(birdCoords)) {
 						this.drawGameOver();
 						clearInterval(this.gameInterval);
+
 					}
 				},
 				play: function() {

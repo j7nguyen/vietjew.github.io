@@ -106,6 +106,9 @@
       if (bounds.leftX > this.nextPipe[0] + PIPE_CONSTANTS.WIDTH) {
         this.nextPipe = this.pipes[1];
         this.score += 1;
+				if (this.score > highScore) {
+					highScore = this.score;
+				}
       }
     }
   }

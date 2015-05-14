@@ -4,7 +4,12 @@
     BGSPEED: -.8,
     WIDTH: 90,
     GAP: 200,
-		COLOR: "rgb(25, 220, 50)"
+		COLOR_STOPS: {
+			0: 'rgb(44, 132, 48)',
+			0.3: 'rgb(103, 216, 97)',
+			0.8: 'rgb(21, 75, 25)',
+			1: 'rgb(15, 61, 22)'
+		}
   }
 
   var Level = window.Level = function(canvas) {
@@ -51,24 +56,30 @@
     drawPipes: function() {
       var that = this;
       this.pipes.forEach(function(pipe){
+				var pipeGradient = that.ctx.createLinearGradient(pipe[0] - 5, 0, pipe[0] + PIPE_CONSTANTS.WIDTH + 10, 0);
+				var stops = PIPE_CONSTANTS.COLOR_STOPS;
+				for (var stop in stops) {
+					pipeGradient.addColorStop(stop, stops[stop]);
+				}
+				
         that.ctx.beginPath();
-        that.ctx.fillStyle = PIPE_CONSTANTS.COLOR;
+				that.ctx.fillStyle = pipeGradient;
         that.ctx.rect(pipe[0], 0, PIPE_CONSTANTS.WIDTH, pipe[1] - 20);
         that.ctx.fill();
 
         that.ctx.beginPath();
-        that.ctx.fillStyle = PIPE_CONSTANTS.COLOR;
+				that.ctx.fillStyle = pipeGradient;
         that.ctx.rect(pipe[0]-5, pipe[1] - 20, PIPE_CONSTANTS.WIDTH + 10, 20);
         that.ctx.fill();
 
 
         that.ctx.beginPath();
-        that.ctx.fillStyle = PIPE_CONSTANTS.COLOR;
+				that.ctx.fillStyle = pipeGradient;
         that.ctx.rect(pipe[0], pipe[1] + PIPE_CONSTANTS.GAP + 20, PIPE_CONSTANTS.WIDTH, that.height) - 20;
         that.ctx.fill();
 
         that.ctx.beginPath();
-        that.ctx.fillStyle = PIPE_CONSTANTS.COLOR;
+				that.ctx.fillStyle = pipeGradient;
         that.ctx.rect(pipe[0] - 5, pipe[1] + PIPE_CONSTANTS.GAP, PIPE_CONSTANTS.WIDTH + 10, 20);
         that.ctx.fill();
 

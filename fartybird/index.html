@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Farty Bird</title>
+	<script type="text/javascript" src="javascripts/game.js" charset="utf-8"></script>
+	<script type="text/javascript" src="javascripts/bird.js" charset="utf-8"></script>
+	<script type="text/javascript" src="javascripts/level.js" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="flappy.css">
+</head>
+<body>
+	<div class="wrapper">
+		<canvas id="bird-game"></canvas>
+		<div id="restart-button">
+			<h2>Restart</h2>
+		</div>
+		<div id="gameinfo">
+			<h3>Click the Restart button to begin or restart the game. Once the game begins, 
+				click in the frame above to move the bird up.</h3>
+		</div>
+
+	</div>
+	<script charset="utf-8">
+	var canvas = document.getElementById("bird-game");
+	canvas.height = 480;
+	canvas.width = 640;
+	var game = new Game(canvas);
+	game.start();
+	document.getElementById('restart-button').addEventListener('click', function(){
+		game = new Game(canvas);
+		game.start();
+	});
+	</script>
+</body>
+</html>

@@ -29,7 +29,7 @@
       this.ctx.drawImage(this.bgImg, this.bgX + this.width, 0, 640, 480);
 
       this.ctx.beginPath();
-      this.ctx.fillStyle = "rgba(0, 0, 0, 0.15)";
+      this.ctx.fillStyle = "rgba(0, 0, 0, 0.30)";
       this.ctx.rect(0,0, this.width, this.height);
       this.ctx.fill();
 

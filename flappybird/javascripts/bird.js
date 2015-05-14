@@ -9,8 +9,12 @@
     this.width = width;
     this.height = height;
     this.vel = 0;
-    this.img = new Image();
-    this.img.src = "./ptery.png";
+    this.imgup = new Image();
+    this.imgup.src = "./images/bird-wing-up.png";
+    this.imgdown = new Image();
+    this.imgdown.src = "./images/bird-wing-down.png";
+		this.currentImage = this.imgup;
+		this.flapCounter = 0;
   };
 
   Bird.prototype = {
@@ -19,11 +23,16 @@
       this.y += this.vel;
     },
     draw: function(ctx){
-      // ctx.beginPath();
-      // ctx.fillStyle = "yellow";
-      // ctx.rect(this.x, this.y, this.width, this.height);
-      // ctx.fill();
-      ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+			if (this.flapCounter < 20) {
+	      ctx.drawImage(this.imgdown, this.x, this.y, this.width, this.height);
+			} else if (this.flapCounter < 40) {
+				ctx.drawImage(this.imgup, this.x, this.y, this.width, this.height);
+			}
+			this.flapCounter += 1;
+			if (this.flapCounter >= 40) {
+				this.flapCounter = 0;
+			}
+
     },
     tick: function(ctx){
       this.move(ctx);

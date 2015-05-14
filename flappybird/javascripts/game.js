@@ -12,11 +12,30 @@
     start: function(){
       //use Pipes method to draw background
       this.level = new Level(canvas);
-      this.bird = new Bird((this.width/2 - 40), (this.height/2) - 40, 60, 30);
+      this.bird = new Bird((this.width/2 - 40), (this.height/2) - 40, 60, 50);
       this.level.drawBackground();
       this.play();
       this.canvas.addEventListener("mousedown", this.bird.flap.bind(this.bird));
     },
+		restart: function(){
+      this.level = new Level(canvas);
+      this.bird = new Bird((this.width/2 - 40), (this.height/2) - 40, 60, 50);
+      this.level.drawBackground();
+
+      this.ctx.beginPath();
+      this.ctx.fillStyle = "black";
+      this.ctx.rect(200, 200, 250, 80);
+      this.ctx.fill();
+
+      this.ctx.fillStyle = "red";
+      this.ctx.fillText("Get Ready!", 225, 250)
+
+
+			var that=this;
+      setTimeout(function(){
+				that.play();}, 2000);
+      this.canvas.addEventListener("mousedown", this.bird.flap.bind(this.bird));
+		},
     drawGameOver: function(){
       this.ctx.beginPath();
       this.ctx.fillStyle = "black";

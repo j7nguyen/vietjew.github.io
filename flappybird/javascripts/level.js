@@ -3,7 +3,8 @@
     SPEED: -4,
     BGSPEED: -.8,
     WIDTH: 90,
-    GAP: 200
+    GAP: 200,
+		COLOR: "rgb(25, 220, 50)"
   }
 
   var Level = window.Level = function(canvas) {
@@ -14,21 +15,24 @@
     this.ctx = canvas.getContext("2d");
     this.nextPipe = this.pipes[0];
     this.bgImg = new Image();
-    this.bgImg.src = "./clouds.png";
+    this.bgImg.src = "./images/clouds.png";
     this.bgX = 0;
   }
   Level.prototype = {
     drawBackground: function() {
-      // this.ctx.beginPath();
-      // this.ctx.fillStyle = 'skyblue';
-      // this.ctx.rect(0,0, this.width, this.height);
-      // this.ctx.fill();
+
       if (this.bgX <= (0 - this.width)) {
         this.bgX = 0;
       }
       this.bgX += PIPE_CONSTANTS.BGSPEED;
       this.ctx.drawImage(this.bgImg, this.bgX, 0, 640, 480);
       this.ctx.drawImage(this.bgImg, this.bgX + this.width, 0, 640, 480);
+
+      this.ctx.beginPath();
+      this.ctx.fillStyle = "rgba(0, 0, 0, 0.15)";
+      this.ctx.rect(0,0, this.width, this.height);
+      this.ctx.fill();
+
   },
     movePipes: function(){
       var that = this;
@@ -48,23 +52,23 @@
       var that = this;
       this.pipes.forEach(function(pipe){
         that.ctx.beginPath();
-        that.ctx.fillStyle = "green";
+        that.ctx.fillStyle = PIPE_CONSTANTS.COLOR;
         that.ctx.rect(pipe[0], 0, PIPE_CONSTANTS.WIDTH, pipe[1] - 20);
         that.ctx.fill();
 
         that.ctx.beginPath();
-        that.ctx.fillStyle = "green";
+        that.ctx.fillStyle = PIPE_CONSTANTS.COLOR;
         that.ctx.rect(pipe[0]-5, pipe[1] - 20, PIPE_CONSTANTS.WIDTH + 10, 20);
         that.ctx.fill();
 
 
         that.ctx.beginPath();
-        that.ctx.fillStyle = "green";
+        that.ctx.fillStyle = PIPE_CONSTANTS.COLOR;
         that.ctx.rect(pipe[0], pipe[1] + PIPE_CONSTANTS.GAP + 20, PIPE_CONSTANTS.WIDTH, that.height) - 20;
         that.ctx.fill();
 
         that.ctx.beginPath();
-        that.ctx.fillStyle = "green";
+        that.ctx.fillStyle = PIPE_CONSTANTS.COLOR;
         that.ctx.rect(pipe[0] - 5, pipe[1] + PIPE_CONSTANTS.GAP, PIPE_CONSTANTS.WIDTH + 10, 20);
         that.ctx.fill();
 

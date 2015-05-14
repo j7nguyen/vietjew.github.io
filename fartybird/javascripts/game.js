@@ -5,12 +5,11 @@
 		this.ctx = canvas.getContext("2d");
 		this.canvas = canvas;
 		this.ctx.font = "40px Arial";
-
 	}
 
 	Game.prototype = {
 		start: function(){
-
+			this.over = false;
 			this.level = new Level(canvas);
 			this.bird = new Bird((this.width/2 - 40), (this.height/2) - 40, 60, 50);
 			var that = this;
@@ -30,7 +29,6 @@
 				that.play();}, 2000);
 				this.canvas.addEventListener("mousedown", this.bird.flap.bind(this.bird));
 			},
-
 				drawGameOver: function(){
 					this.ctx.beginPath();
 					this.ctx.fillStyle = "black";
@@ -55,11 +53,14 @@
 
 					var birdCoords = this.bird.getBounds();
 					if (this.level.collidesWith(birdCoords)) {
+						this.bird.dead = true;
 						this.drawGameOver();
 						clearInterval(this.gameInterval);
+
 					}
 				},
 				play: function() {
+					this.bird.dead = false;
 					this.gameInterval = setInterval(this.tick.bind(this), (1000/60));
 				}
 			}

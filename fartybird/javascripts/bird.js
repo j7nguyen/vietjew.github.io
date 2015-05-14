@@ -16,6 +16,7 @@
 		this.currentImage = this.imgup;
 		this.flapCounter = 0;
 		this.fart = new Audio('./fart-short.wav');
+		this.dead = true;
   };
 
   Bird.prototype = {
@@ -40,8 +41,10 @@
       this.draw(ctx);
     },
     flap: function() {
-      this.vel = PHYSICS.FLAP_VEL;
-			this.fart.play();
+			if (!this.dead) {
+	      this.vel = PHYSICS.FLAP_VEL;
+				this.fart.play();				
+			}
     },
     getBounds: function() {
       var coordinates = {

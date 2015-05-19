@@ -96,7 +96,7 @@ p {
 
 #teamsync {
 	position: relative;
-	margin-top: 65px;
+	margin-top: 67px;
 	text-align: center;
 	z-index: 2;
 }
@@ -108,13 +108,13 @@ p {
 	padding-bottom: 5px;
 }
 
-
 #teamsync h1 {
 	margin-bottom: 0;
 }
 
 #tstext {
-	margin-top: 1.5%;
+	margin-top: 8px;
+	line-height: 26px;
 }
 
 /**********************************************
@@ -221,15 +221,26 @@ p {
 #in-sync {
 	text-align: center;
 	color: #8899A7;
-	padding: 40px;
+	padding-top: 29px;
+	padding-bottom: 36px;
+}
+
+#in-sync a {
+	text-decoration: none;
 }
 
 /*********
 	Footer
 *********/
 
+.footer {
+	padding-top: 24px;
+}
+
 .footer a {
 	text-decoration: none;
+	color: black;
+	font-weight: 400;
 }
 
 /****************
@@ -237,16 +248,13 @@ p {
 *****************/
 
 .round {
-  -webkit-border-radius: 5px; 
-  -moz-border-radius: 5px; 
   border-radius: 3px; 
 }
 
 .trybutton {
 	z-index: 1;
-	height: 50px;
-	width: 80%;
-	max-width: 280px;
+	height: 54px;
+	width: 270px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 24px;
@@ -254,12 +262,12 @@ p {
 	box-shadow: 1px 1px 1px 1px #888888;
 }
 
-.trybutton p {
+.trybutton h3 {
 	position: relative;
-	margin: 0 auto;
-	top: 50%;
-	transform: translateY(-50%);
-	font-size: 15px;
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+	margin-top: 14px;
+	font-size: 18px;
 	font-weight: 400;
 }
 
@@ -276,11 +284,9 @@ p {
 	margin-left: auto;
 	margin-right: auto;
 	color: #007EE5;
-	border-style: solid;
+	border: 1px solid #007EE5;
 	width: 110px;
 	height: 34px;
-	border-width: 1px;
-	border-color: #007EE5;
 	cursor: pointer;
 }
 
@@ -292,5 +298,17 @@ p {
 .bluebutton {
 	background-color: #007EE5;
 	color: white;
-	cursor: pointer;
+	border: 1px solid #007EE5;
+	height: 50px;
+	width: 250px;
+	margin-top: 30px;
+	margin-bottom: 29px;
+}
+
+.bluebutton h3 {	
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+	margin-top: 13px;
+	font-weight: 400;
+	font-size: 15px;
 }

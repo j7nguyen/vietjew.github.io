@@ -32,6 +32,8 @@
 
 .slid {
 	-webkit-animation-name: imageSlide;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animatin-timing-function: linear;
 	animation-name: imageSlide;
 }
 
@@ -57,17 +59,17 @@
 @-webkit-keyframes imageSlide {
 	0% {
 		width: 50%;
-		transform: translate(-100px, 0);
+		-webkit-transform: translate(-100px, 0);
 		-webkit-filter: blur(3px);
 		filter: blur(3px);
 	}
 	90% {
 		width: 90%;
-		transform: translate(10px, 0);
+		-webkit-transform: translate(10px, 0);
 	}
 		100% {
 		width: 100%;
-		transform: translate(0,0);
+		-webkit-transform: translate(0,0);
 		-webkit-filter: blur(0);
 		filter: blur(0);
 	}

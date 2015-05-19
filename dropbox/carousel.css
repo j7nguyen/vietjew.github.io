@@ -80,6 +80,8 @@
 .carousel-slide-left {
 	-webkit-animation-name: carouselSlideLeft;
 	-webkit-animation-duration: .25s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animatin-timing-function: linear;
 	animation-name: carouselSlideLeft;
 	animation-duration: .25s;
 }
@@ -87,6 +89,8 @@
 .carousel-slide-right {
 	-webkit-animation-name: carouselSlideRight;
 	-webkit-animation-duration: .25s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animatin-timing-function: linear;
 	animation-name: carouselSlideRight;
 	animation-duration: .25s;
 }
@@ -102,10 +106,10 @@
 
 @-webkit-keyframes carouselSlideLeft {
 	0% {
-		transform: translate(80%, 0);
+		-webkit-transform: translate(80%, 0);
 	}
 	100% {
-		transform: translate(0,0);
+		-webkit-transform: translate(0,0);
 	}
 }
 
@@ -120,9 +124,9 @@
 
 @-webkit-keyframes carouselSlideRight {
 	0% {
-		transform: translate(-80%, 0);
+		-webkit-transform: translate(-80%, 0);
 	}
 	100% {
-		transform: translate(0,0);
+		-webkit-transform: translate(0,0);
 	}
 }

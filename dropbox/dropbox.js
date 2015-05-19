@@ -15,14 +15,14 @@ $(window).scroll(function() {
 		$(".image-slide").toggleClass("hidden");
 		$(".image-slide").toggleClass("why-image-small").toggleClass("why-image-large");
 		$("#no-delay").toggleClass("no-delay");
-		setTimeout(function() {
-			$('#delay-1').toggleClass("no-delay")
-		}, 150);
-		setTimeout(function() {
-			$('#delay-2').toggleClass("no-delay")
-		}, 300);
-		// $("#delay-1").toggleClass("delay-1");
-		// $("#delay-2").toggleClass("delay-2");
+		// setTimeout(function() {
+		// 	$('#delay-1').toggleClass("no-delay")
+		// }, 150);
+		// setTimeout(function() {
+		// 	$('#delay-2').toggleClass("no-delay")
+		// }, 300);
+		$("#delay-1").toggleClass("delay-1");
+		$("#delay-2").toggleClass("delay-2");
 	}
 });
 

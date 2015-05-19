@@ -1,7 +1,18 @@
+#carousel-images {
+	text-align: center;
+	position: relative;
+}
+
+.images {
+	padding-top: 5px;
+	padding-bottom: 0;
+}
+
 .carousel {
 	list-style-type: none;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 5px;
 	padding: 0;
 	background-size: 100%;
 	background-repeat: no-repeat;
@@ -11,37 +22,18 @@
 	position: relative;
 }
 
+.carousel_image {
+	width: 100%;
+}
+
 .hideable {
   display: none;
 }
 
-.circle {
-	border-radius: 50%;
-	margin-left: 10px;
-	margin-right: 10px;
-	width: 15px;
-	height: 15px; 
-	display: inline-block;
-	cursor: pointer;
-	/* width and height can be anything, as long as they're equal */
-}
 
-.blue-circle {
-	background-color: #007EE5;
-}
-
-.gray-circle {
-	background-color: #8899A7;
-}
-
-.carousel-circles {
-	padding-top: 0;
-}
-
-#carousel-images {
-	text-align: center;
-	position: relative;
-}
+/********************
+	Carousel controls
+*********************/
 
 .arrow {
 	top: 50%;
@@ -58,9 +50,32 @@
 	right: 15%;
 }
 
-.carousel_image {
-	width: 100%;
+.carousel-circles {
+	padding-top: 0;
 }
+
+.circle {
+	border-radius: 50%;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 15px;
+	height: 15px; 
+	display: inline-block;
+	cursor: pointer;
+}
+
+.blue-circle {
+	background-color: #007EE5;
+}
+
+.gray-circle {
+	background-color: #8899A7;
+}
+
+
+/***********************
+	Carousel animations
+***********************/
 
 .carousel-slide-left {
 	-webkit-animation-name: carouselSlideLeft;
@@ -76,6 +91,38 @@
 	animation-duration: .25s;
 }
 
-.images {
-	padding: 0;
+@keyframes carouselSlideLeft {
+	0% {
+		transform: translate(80%, 0);
+	}
+	100% {
+		transform: translate(0,0);
+	}
+}
+
+@-webkit-keyframes carouselSlideLeft {
+	0% {
+		transform: translate(80%, 0);
+	}
+	100% {
+		transform: translate(0,0);
+	}
+}
+
+@keyframes carouselSlideRight {
+	0% {
+		transform: translate(-80%, 0);
+	}
+	100% {
+		transform: translate(0,0);
+	}	
+}
+
+@-webkit-keyframes carouselSlideRight {
+	0% {
+		transform: translate(-80%, 0);
+	}
+	100% {
+		transform: translate(0,0);
+	}
 }

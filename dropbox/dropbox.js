@@ -1,3 +1,5 @@
+// This script determines when the images in "Why Dropbox for Business?" section should appear and slide in
+
 function isVisible(el) {
 	var screenTop = $(window).scrollTop();
 	var screenBottom = screenTop + $(window).height();

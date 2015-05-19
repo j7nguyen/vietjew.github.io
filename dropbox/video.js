@@ -1,3 +1,5 @@
+// This replaces the video's placeholder image with an autoplaying html5 video element. The video file was converted to .ogv for compatibility with Firefox and other browsers that don't support mp4.
+
 $('#play-button').click(function() {togglePlayer();});
 
 function togglePlayer() {

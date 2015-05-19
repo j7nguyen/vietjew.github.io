@@ -1,6 +1,17 @@
+/**********************
+	Page-wide / basics
+***********************/
+
 body {
 	font-family: "Open Sans", sans-serif;
 	font-weight: 300;
+	background-color: gray;
+}
+
+#wrapper {
+	background-color: white;
+	margin-left: auto;
+	margin-right:auto;
 }
 
 h1 {
@@ -26,10 +37,16 @@ p {
 	font-weight: 300;
 }
 
+/************************************************
+	First section: Menu / "Get your team in sync"
+*************************************************/
+
 #menu {
 	font-size: 13px;
 	font-weight: 400;
+	margin-left: 15px;
 	z-index: 2;
+	position: relative;
 }
 
 #menu h3 {
@@ -53,19 +70,57 @@ p {
 #header {
 	background-color: #007EE5;
 	color: white;
-	height: 500px;
+	min-height: 500px;
 	background-image: url("assets/dropbox-for-business-files.png");
-	background-position: 50% 50%;
+	background-position: 50% 0;
+	padding-left: 0;
+	padding-right: 0;
+	position: relative;
+}
+
+.bgslide {
 	-webkit-animation-name: backgroundSlide;
 	-webkit-animation-duration: 1s;
 	animation-name: backgroundSlide;
 	animation-duration: 1s;
-/*	overflow: hidden;*/
 }
 
-#header-cover {
-	
+.blue-fader {
+	width: 100%;
+	height: 100%;
+	min-height: 500px;
+	background-color: #007EE5;
+	padding-left: 15px;
+	padding-right: 15px;
 }
+
+#teamsync {
+	position: relative;
+	margin-top: 65px;
+	text-align: center;
+	z-index: 2;
+}
+
+#teamsync a {
+	text-decoration: none;
+	color: white;
+	border-bottom: 1px solid white;
+	padding-bottom: 5px;
+}
+
+
+#teamsync h1 {
+	margin-bottom: 0;
+}
+
+#tstext {
+	margin-top: 1.5%;
+}
+
+/**********************************************
+	Second section: Why Dropbox for Business?
+**********************************************/
+
 
 .why-image {
 	width: 100%;
@@ -83,37 +138,21 @@ p {
 	visibility: hidden;
 }
 
-.footer a {
-	text-decoration: none;
-}
+/***************************************************************
+	Third section: What can Dropbox for Business do for your team?
+*****************************************************************/
 
-#teamsync {
-	position: relative;
-	top: 13.5%;
-	text-align: center;
-	z-index: 2;
-}
-
-#teamsync h1 {
-	margin-bottom: 0;
-}
-
-#tstext {
-	margin-top: 1.5%;
-}
-
-#teamsync a {
-	text-decoration: none;
-	color: white;
-	border-bottom: 1px solid white;
-	padding-bottom: 5px;
-}
 
 #whatcan {
-	padding-top: 35px;
+	padding-top: 30px;
 	padding-bottom: 30px;
 	text-align: center;
 	color: #8899A7;
+}
+
+#whatcan-info {
+	padding-top: 5px;
+	padding-bottom: 13px;
 }
 
 #whydropbox {
@@ -135,6 +174,62 @@ p {
 	margin-top: 2.5em;
 	margin-bottom: 0;
 }
+
+#whydb-learnbutton {
+	padding-top: 8px;
+	padding-bottom: 50px;
+}
+
+/*************************
+	Fourth section: video
+*************************/
+
+#video {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#video-still {
+	background-image: url("assets/video-still.jpg");
+	background-position: 50% 50%;
+	height: 500px;
+	text-align: center;
+	color: #8899A7;
+/*	padding: 0;*/
+}
+
+#video-still h2 {
+	height: 152px;
+}
+
+#play-button {
+	cursor: pointer;
+}
+
+#video-player {
+	background-color: black;
+	height: 500px;
+	padding: 0;
+/*	display: none;*/
+}
+
+#in-sync {
+	text-align: center;
+	color: #8899A7;
+	padding: 40px;
+}
+
+/*********
+	Footer
+*********/
+
+.footer a {
+	text-decoration: none;
+}
+
+/****************
+	Buttons etc.
+*****************/
 
 .round {
   -webkit-border-radius: 5px; 
@@ -193,54 +288,4 @@ p {
 	background-color: #007EE5;
 	color: white;
 	cursor: pointer;
-}
-
-#whydb-learnbutton {
-	padding-top: 8px;
-	padding-bottom: 50px;
-}
-
-#video {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-#video-still {
-	background-image: url("assets/video-still.jpg");
-	background-position: 50% 50%;
-	height: 500px;
-	text-align: center;
-	color: #8899A7;
-/*	padding: 0;*/
-}
-
-#video-still h2 {
-	height: 152px;
-}
-
-#play-button {
-	cursor: pointer;
-}
-
-#video-player {
-	background-color: black;
-	height: 500px;
-	padding: 0;
-/*	display: none;*/
-}
-
-#in-sync {
-	text-align: center;
-	color: #8899A7;
-	padding: 40px;
-}
-
-body {
-	background-color: gray;
-}
-
-#wrapper {
-	background-color: white;
-	margin-left: auto;
-	margin-right:auto;
 }

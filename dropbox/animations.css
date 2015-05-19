@@ -33,24 +33,24 @@
 .no-delay {
 	-webkit-animation-name: imageSlideNoDelay;
 	animation-name: imageSlideNoDelay;
-		animation-duration: 1s;
 }
 
 .delay-1 {
 	-webkit-animation-name: imageSlideDelayOne;
 	animation-name: imageSlideDelayOne;
-	animation-duration: 1s;
 }
 
 .delay-2 {
 	-webkit-animation-name: imageSlideDelayTwo;
 	animation-name: imageSlideDelayTwo;
-	animation-duration: 1s;
 }
 
 @keyframes imageSlideNoDelay {
 	0% {
+		-webkit-filter: blur(5px);
+		filter: blur(5px);
 		transform: translate(-100px, 0);
+		width: 50%;
 	}
 	40% {
 		transform: translate(20px,0);
@@ -59,13 +59,19 @@
 		transform: translate(0,0);
 	}
 	100% {
+		width: 100%;
 		transform: translate(0,0);
+		-webkit-filter: blur(0);
+		filter: blur(0);
 	}
 }
 
 @-webkit-keyframes imageSlideNoDelay {
 	0% {
+		width: 50%;
 		transform: translate(-100px, 0);
+		-webkit-filter: blur(2px);
+		filter: blur(2px);
 	}
 	40% {
 		transform: translate(20px,0);
@@ -74,80 +80,13 @@
 		transform: translate(0,0);
 	}
 	100% {
+		width: 100%;
 		transform: translate(0,0);
+		-webkit-filter: blur(0);
+		filter: blur(0);
 	}
 }
 
-@keyframes imageSlideDelayOne {
-	0% {
-		transform: translate(-100px, 0);
-	}
-	10% {
-		transform: translate(-100px, 0);
-	}
-	50% {
-		transform: translate(20px,0);
-	}
-	80% {
-		transform: translate(0,0);
-	}
-	100% {
-		transform: translate(0,0);
-	}
-}
 
-@-webkit-keyframes imageSlideDelayOne {
-	0% {
-		transform: translate(-100px, 0);
-	}
-	10% {
-		transform: translate(-100px, 0);
-	}
-	50% {
-		transform: translate(20px,0);
-	}
-	80% {
-		transform: translate(0,0);
-	}
-	100% {
-		transform: translate(0,0);
-	}
-}
-
-@keyframes imageSlideDelayTwo {
-	0% {
-		transform: translate(-100px, 0);
-	}
-	20% {
-		transform: translate(-100px, 0);
-	}
-	60% {
-		transform: translate(20px,0);
-	}
-	90% {
-		transform: translate(0,0);
-	}
-	100% {
-		transform: translate(0,0);
-	}
-}
-
-@-webkit-keyframes imageSlideDelayTwo {
-	0% {
-		transform: translate(-100px, 0);
-	}
-	20% {
-		transform: translate(-100px, 0);
-	}
-	60% {
-		transform: translate(20px,0);
-	}
-	90% {
-		transform: translate(0,0);
-	}
-	100% {
-		transform: translate(0,0);
-	}
-}
 
 

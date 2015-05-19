@@ -13,9 +13,16 @@ $(window).scroll(function() {
 	inView = isVisible(".image-slide");
 	if ((inView && hidden) && $(window).scrollTop() >= 200) {
 		$(".image-slide").toggleClass("hidden");
+		$(".image-slide").toggleClass("why-image-small").toggleClass("why-image-large");
 		$("#no-delay").toggleClass("no-delay");
-		$("#delay-1").toggleClass("delay-1");
-		$("#delay-2").toggleClass("delay-2");
+		setTimeout(function() {
+			$('#delay-1').toggleClass("no-delay")
+		}, 150);
+		setTimeout(function() {
+			$('#delay-2').toggleClass("no-delay")
+		}, 300);
+		// $("#delay-1").toggleClass("delay-1");
+		// $("#delay-2").toggleClass("delay-2");
 	}
 });
 

@@ -121,10 +121,10 @@ p {
 	Second section: Why Dropbox for Business?
 **********************************************/
 
-
 .why-image-small {
 	width: 50%;
 	max-width: 200px;
+	visibility: hidden;
 }
 
 .why-image-large {
@@ -139,9 +139,6 @@ p {
 	max-height: 182px;
 }
 
-.hidden {
-	visibility: hidden;
-}
 
 /***************************************************************
 	Third section: What can Dropbox for Business do for your team?

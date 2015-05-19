@@ -1,5 +1,7 @@
 // This script determines when the images in "Why Dropbox for Business?" section should appear and slide in
 
+var slid = false;
+
 function isVisible(el) {
 	var screenTop = $(window).scrollTop();
 	var screenBottom = screenTop + $(window).height();
@@ -9,11 +11,10 @@ function isVisible(el) {
 }
 
 $(window).scroll(function() {
-	hidden = $(".image-slide").hasClass("hidden");
 	inView = isVisible(".image-slide");
-	if ((inView && hidden) && $(window).scrollTop() >= 200) {
-		$(".image-slide").toggleClass("hidden");
+	if ((inView && !slid) && $(window).scrollTop() >= 200) {
 
+		slid = true;
 		$("#no-delay").toggleClass("slid");
 		setTimeout(function() {
 			$('#delay-1').toggleClass("slid")

@@ -25,16 +25,14 @@
 	Images in "Why Dropbox for Business?" section
 ************************************************/
 
-.image-slide {
-	-webkit-animation-duration: 0.5s;
-	animation-duration: 0.5s;
-}
 
 .slid {
+	-webkit-animation-duration: 0.5s;
+	animation-duration: 0.5s;
 	-webkit-animation-name: imageSlide;
+	animation-name: imageSlide;
 	-webkit-animation-iteration-count: 1;
 	-webkit-animatin-timing-function: linear;
-	animation-name: imageSlide;
 }
 
 @keyframes imageSlide {

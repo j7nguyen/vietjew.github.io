@@ -1,5 +1,7 @@
 DIRECTION_OFFSETS = {"U": [-1, 0], "D": [1, 0], "L": [0, -1], "R": [0, 1]}
 
+var highScore = 0;
+
 var Board = React.createClass({
   getInitialState: function() {
     var states = [];
@@ -22,8 +24,17 @@ var Board = React.createClass({
     this.setState({states: newStates});
     document.body.addEventListener('keydown', this.setDirection);
     this.generateApple(this.state.snake.segments);
-    this.Running = setInterval(this.tick, 150);
+
+    this.Running = setInterval(function(){
+			if(this.isMounted()){
+				this.tick();
+			}
+		}.bind(this), 150);
+
   },
+	componentWillUnmount: function() {
+		document.body.removeEventListener('keydown', this.setDirection);
+	},
   drawSnake: function() {
     var newStates = this.state.states;
     this.state.snake.segments.forEach(function(segment){
@@ -45,8 +56,16 @@ var Board = React.createClass({
         window.clearInterval(this.Running);
         document.getElementById('score').innerHTML =
         "<h1>GAME OVER!</h1><h2>Final Score: " + this.state.score + "</h2>" +
-        "<h2><a href='.'>Refresh page</a> to play again!</h2>";
-      }
+				"<h2>High score: " + window.highScore + "</h2>" +
+        "<h2>Press Space to play again!</h2>";
+				window.highScore = this.state.score;
+				document.body.addEventListener('keydown', function(event){
+					if (event.keyCode === 32) {
+						window.newGame();
+					}
+				});
+			}
+			
     }.bind(this))
   },
   generateApple: function() {
@@ -65,18 +84,36 @@ var Board = React.createClass({
   },
   setDirection: function(event) {
     var newDirection;
+		var currentDirection = this.state.snake.direction;
+		var alone = this.state.snake.segments.length === 1;
     switch(event.keyCode) {
       case 37:
-        newDirection = "L";
+				if (alone || currentDirection !== "R"){
+	        newDirection = "L";					
+				} else {
+					newDirection = currentDirection;
+				}
         break;
       case 38:
-        newDirection = "U";
+				if (alone || currentDirection !== "D"){
+	        newDirection = "U";					
+				} else {
+					newDirection = currentDirection;
+				}
         break;
       case 39:
-        newDirection = "R";
+				if (alone || currentDirection !== "L"){
+	        newDirection = "R";					
+				} else {
+					newDirection = currentDirection;
+				}
         break;
       case 40:
-        newDirection = "D";
+				if (alone || currentDirection !== "U"){
+	        newDirection = "D";					
+				} else {
+					newDirection = currentDirection;
+				}
         break;
     }
     this.state.snake.direction = newDirection;
@@ -105,11 +142,6 @@ var Board = React.createClass({
     });
     this.setState({states: newStates, snake: {segments: newSegs, direction: currentDirection}});
   },
-  newSegment: function(coords) {
-    var newSnake = this.state.snake;
-    newSnake.segments.push(coords);
-    this.setState({snake: newSnake});
-  },
   render: function() {
     var tiles = [];
     for(var i=0;i<=this.props.size;i++) {
@@ -136,4 +168,9 @@ var Tile = React.createClass({
   }
 });
 
-React.render(<Board size={10} />, document.getElementById('board'));
+var newGame = function() {
+	React.unmountComponentAtNode(document.getElementById('board'));
+	React.render(<Board size={10} />, document.getElementById('board'));
+}
+
+newGame();

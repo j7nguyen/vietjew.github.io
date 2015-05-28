@@ -44,7 +44,8 @@ var Board = React.createClass({
       if (collided || atEdge) {
         window.clearInterval(this.Running);
         document.getElementById('score').innerHTML =
-        "<h1>GAME OVER!</h1><h2>Final Score: " + this.state.score + "</h2>";
+        "<h1>GAME OVER!</h1><h2>Final Score: " + this.state.score + "</h2>" +
+        "<h2><a href='.'>Refresh page</a> to play again!</h2>";
       }
     }.bind(this))
   },
@@ -135,4 +136,4 @@ var Tile = React.createClass({
   }
 });
 
-React.render(<Board size={10} />, document.body);
+React.render(<Board size={10} />, document.getElementById('board'));

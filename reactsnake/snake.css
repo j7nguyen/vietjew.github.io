@@ -61,7 +61,7 @@ li {
 .sizeButton {
 	position: relative;
 	width: 150px;
-	height: 30px;
+	height: 25px;
 	text-align: center;
 	vertical-align: center;
 	background-color: #CC7A6F;
@@ -70,10 +70,11 @@ li {
 	margin-left: auto;
 	margin-right: auto;
 	color: white;
-	padding: 2px;
+	padding: 4px;
 
 }
 
 .sizeButton h3 {
 	margin: auto;
+	position: relative;
 }

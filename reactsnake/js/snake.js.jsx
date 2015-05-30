@@ -86,7 +86,6 @@ var Board = React.createClass({
     }
   },
   setDirection: function(event) {
-
     var newDirection;
 		var currentDirection = this.state.snake.direction;
 		var alone = this.state.snake.segments.length === 1;
@@ -205,14 +204,3 @@ React.render(
 		<SizeSelector width={15} text={"Medium (15x15)"} />
 		<SizeSelector width={20} text={"Large (20x20)"} />
 	</div>, document.getElementById('board'));
-
-// React.render(
-// 	<div>
-// 		<div className="sizeButton" onClick={newGame(10)}><h3>{"Small (10x10)"}</h3></div>
-// 		<div className="sizeButton"><h3>{"Medium (15x15)"}</h3></div>
-// 		<div className="sizeButton"><h3>{"Large (20x20)"}</h3></div>
-// 	</div>
-// 	, document.getElementById('board')
-// );
-
-// setTimeout(function(){newGame()}, 3000);

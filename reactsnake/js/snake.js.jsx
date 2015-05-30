@@ -116,9 +116,14 @@ var Board = React.createClass({
 				}
         break;
     }
-    this.state.snake.direction = newDirection;
+		if (this.directionSet === false) {
+				this.state.snake.direction = newDirection;
+		
+				this.directionSet = true;
+		}
   },
   tick: function() {
+		this.directionSet = false;
     var newSegs = this.state.snake.segments.slice(0);
     var currentDirection = this.state.snake.direction;
     var frontSeg = newSegs[newSegs.length - 1];

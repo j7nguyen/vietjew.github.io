@@ -1,6 +1,7 @@
 DIRECTION_OFFSETS = {"U": [-1, 0], "D": [1, 0], "L": [0, -1], "R": [0, 1]}
 
 var highScore = 0;
+var width;
 
 var Board = React.createClass({
   getInitialState: function() {
@@ -59,11 +60,13 @@ var Board = React.createClass({
 				"<h2>High score: " + window.highScore + "</h2>" +
         "<h2>Press Space to play again!</h2>";
 				window.highScore = this.state.score;
-				document.body.addEventListener('keydown', function(event){
+				var startGame = function(event){
 					if (event.keyCode === 32) {
-						window.newGame();
+						window.newGame(width);
+						document.body.removeEventListener('keydown', startGame);
 					}
-				});
+				}
+				document.body.addEventListener('keydown', startGame);
 			}
 			
     }.bind(this))
@@ -83,6 +86,7 @@ var Board = React.createClass({
     }
   },
   setDirection: function(event) {
+
     var newDirection;
 		var currentDirection = this.state.snake.direction;
 		var alone = this.state.snake.segments.length === 1;
@@ -115,6 +119,9 @@ var Board = React.createClass({
 					newDirection = currentDirection;
 				}
         break;
+			default:
+				newDirection = currentDirection;
+				break;
     }
 		if (this.directionSet === false) {
 				this.state.snake.direction = newDirection;
@@ -173,9 +180,39 @@ var Tile = React.createClass({
   }
 });
 
-var newGame = function() {
+var newGame = function(width) {
 	React.unmountComponentAtNode(document.getElementById('board'));
-	React.render(<Board size={10} />, document.getElementById('board'));
+	React.render(<Board size={width} />, document.getElementById('board'));
 }
 
-newGame();
+var SizeSelector = React.createClass({
+	newGame: function() {
+		var width = parseInt(this.props.width);
+		window.width = width;
+		React.unmountComponentAtNode(document.getElementById('board'));
+		React.render(<Board size={width} />, document.getElementById('board'));
+	},
+	render: function() {
+		return (
+		<div className="sizeButton" onClick={this.newGame}><h3>{this.props.text}</h3></div>
+		)
+	}
+})
+
+React.render(
+	<div>
+		<SizeSelector width={10} text={"Small (10x10)"} />
+		<SizeSelector width={15} text={"Medium (15x15)"} />
+		<SizeSelector width={20} text={"Large (20x20)"} />
+	</div>, document.getElementById('board'));
+
+// React.render(
+// 	<div>
+// 		<div className="sizeButton" onClick={newGame(10)}><h3>{"Small (10x10)"}</h3></div>
+// 		<div className="sizeButton"><h3>{"Medium (15x15)"}</h3></div>
+// 		<div className="sizeButton"><h3>{"Large (20x20)"}</h3></div>
+// 	</div>
+// 	, document.getElementById('board')
+// );
+
+// setTimeout(function(){newGame()}, 3000);

@@ -57,3 +57,23 @@ li {
 .snake {
   background: green;
 }
+
+.sizeButton {
+	position: relative;
+	width: 150px;
+	height: 30px;
+	text-align: center;
+	vertical-align: center;
+	background-color: #CC7A6F;
+	cursor: pointer;
+	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+	padding: 2px;
+
+}
+
+.sizeButton h3 {
+	margin: auto;
+}

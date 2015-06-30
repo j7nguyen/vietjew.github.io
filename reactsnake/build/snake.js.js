@@ -8,7 +8,7 @@ DIRECTION_KEYCODES_OPPOSITES = {
 var highScore = 0;
 var width;
 
-var Board = React.createClass({
+var Board = React.createClass({displayName: "Board",
   getInitialState: function() {
     var states = [];
     for (var i = 0; i <= this.props.size; i++) {
@@ -135,49 +135,49 @@ var Board = React.createClass({
     for(var i=0;i<=this.props.size;i++) {
       var row = [];
       for(var j=0;j<=this.props.size;j++) {
-        row.push(<Tile key={j} className={this.state.states[i][j]} type={this.state.states[i][j]} />);
+        row.push(React.createElement(Tile, {key: j, className: this.state.states[i][j], type: this.state.states[i][j]}));
       }
-      tiles.push(<ul key={i}>{row}</ul>);
+      tiles.push(React.createElement("ul", {key: i}, row));
     }
     return (
-      <div>
-        <div className="board">{tiles}</div>
-        <div id="score"><h2>Score: {this.state.score}</h2></div>
-      </div>);
+      React.createElement("div", null, 
+        React.createElement("div", {className: "board"}, tiles), 
+        React.createElement("div", {id: "score"}, React.createElement("h2", null, "Score: ", this.state.score))
+      ));
   }
 });
 
-var Tile = React.createClass({
+var Tile = React.createClass({displayName: "Tile",
   getInitialState: function() {
     return {type: 'empty'};
   },
   render: function() {
-    return (<li className={this.props.type} type={this.props.type}></li>)
+    return (React.createElement("li", {className: this.props.type, type: this.props.type}))
   }
 });
 
 var newGame = function(width) {
 	React.unmountComponentAtNode(document.getElementById('board'));
-	React.render(<Board size={width} />, document.getElementById('board'));
+	React.render(React.createElement(Board, {size: width}), document.getElementById('board'));
 }
 
-var SizeSelector = React.createClass({
+var SizeSelector = React.createClass({displayName: "SizeSelector",
 	newGame: function() {
 		var width = parseInt(this.props.width);
 		window.width = width;
 		React.unmountComponentAtNode(document.getElementById('board'));
-		React.render(<Board size={width} />, document.getElementById('board'));
+		React.render(React.createElement(Board, {size: width}), document.getElementById('board'));
 	},
 	render: function() {
 		return (
-		<div className="sizeButton" onClick={this.newGame}><h3>{this.props.text}</h3></div>
+		React.createElement("div", {className: "sizeButton", onClick: this.newGame}, React.createElement("h3", null, this.props.text))
 		)
 	}
 })
 
 React.render(
-	<div>
-		<SizeSelector width={7} text={"Small (7x7)"} />
-		<SizeSelector width={10} text={"Medium (10x10)"} />
-		<SizeSelector width={15} text={"Large (15x15)"} />
-	</div>, document.getElementById('board'));
+	React.createElement("div", null, 
+		React.createElement(SizeSelector, {width: 7, text: "Small (7x7)"}), 
+		React.createElement(SizeSelector, {width: 10, text: "Medium (10x10)"}), 
+		React.createElement(SizeSelector, {width: 15, text: "Large (15x15)"})
+	), document.getElementById('board'));

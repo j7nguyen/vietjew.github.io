@@ -1,0 +1,9 @@
+.span4 {
+  height: 250px;
+  overflow: hidden;
+  display: table-cell;
+  vertical-align: middle;
+  border: 1px solid gray;
+  box-sizing: border-box;
+  background-color: #ECECEC;
+}
